@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shadow Over Mallow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/user.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Bigelow+Rules|Metal+Mania|Amatic+SC|Voltaire|Shadows+Into+Light+Two|Amarante' rel='stylesheet' type='text/css'>
+   <!--  <link href="css/demo.css" rel="stylesheet"> -->
+
+   <!--  <link rel="shortcut icon" href="images/favicon.ico"> -->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+  $(document).ready(function(){
+    $(".movie").hide();
+    $(".clickMe").click(function(){
+      $(".jumbotron").fadeOut(function(){
+        // $( ".hidden" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+         $(".movie").fadeIn();
+          });
+        
+      });
+      
+  
+    // audio playlist
+
+        var audio;
+        var playlist;
+        var tracks;
+        var current;
+
+        init();
+        function init(){
+            current = 0;
+            audio = $('#audio');
+            playlist = $('#playlist');
+            tracks = playlist.find('li a');
+            len = tracks.length - 1;
+            
+            playlist.find('a').click(function(e){
+                e.preventDefault();
+                link = $(this);
+                current = link.parent().index();
+                run(link, audio[0]);
+            });
+            audio[0].addEventListener('ended',function(e){
+                current++;
+                if(current == len){
+                    current = 0;
+                    link = playlist.find('a')[0];
+                }else{
+                    link = playlist.find('a')[current];    
+                }
+                run($(link),audio[0]);
+            });
+        }
+        function run(link, player){
+                player.src = link.attr('href');
+                par = link.parent();
+                par.addClass('active').siblings().removeClass('active');
+                audio[0].load();
+                audio[0].play();
+        }
+
+
+  });
+</script>
+  </head>
+  <body>
+
+ <div id="wrap">
+ <div id="cover"> 
+
+  <div class="navbar navbar-inverse navbar-top" role="navigation">
+        <div class="container" id="nav-content">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#">Project name</a> -->
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">The Movie</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="crew.html">The Crew</a></li>
+          </ul>
+       </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+  </div>
+    
+ 
+    <section class="container jumbotron">
+      <h1 class="text-center">Shadow Over Mallow</h1>
+      <p class="lead text-center">What's silly to us, is a god to <em>them</em>.</p>
+      <p class="text-right myoffset"><a href="#" class="clickMe"><b>Watch The Movie</b></a></p>
+    </section>
+
+
+
+
+    <section class="container">
+
+          <video class="movie" width="1140" height="600" poster="assets/new_poster.jpg" controls>
+          <!-- safari / chrome / ie9 -->
+          <source type="video/mp4" src="assets/Shadow_over_mallow_hugo.mp4"> 
+
+        </video>
+    </section>
+  </div> <!-- cover1 -->
+
+  <div id="cover2">
+    <section class="container">
+        <article class="row">
+          <div class="col-md-7">
+            <h3 class="page-header">Synopsis</h3>
+            <p>A lone martial artist (<b><a href="crew.html">Hugo Lacerda</a></b>) is lost on his commute back home and is forced to take refuge in an eerie tavern inn for the night. After a mysterious flat tire on his bike strands him to the inn, followed shortly by the sudden disappearance of his phone, the lone batler begins to suspect something mischievous and evil is afoot. It doesn't take long for him to find out that the tavern isn't as it seems as he finds himself in havan of human sacrificing cultists. (<b><a href="crew.html">The EvilBob0</a></b>).</P> <a href="about.html"><em>Read More -></em></a>
+            </p>
+
+          </div> <!-- /col-md-7 -->
+
+
+
+
+          <aside class="col-md-5">
+            <div class="composer-banner">
+              <h3 class="footer-title">Sample Music By Kevin Mcleod</h3>
+              <audio id="audio" tabindex="0" controls>
+                  <source src="assets/Dangerous.mp3">
+                  Your Fallback goes here
+              </audio>
+
+                    <ul id="playlist">
+                      <li class="active">
+                          <a href="assets/Dangerous.mp3">
+                               Dangerous
+                          </a>
+                      </li>
+                      <li>
+                          <a href="assets/Epic_Unease.mp3">
+                              Epic Unease
+                          </a>
+                      </li>
+                      
+                      <li>
+                          <a href="assets/Private_Reflection.mp3">
+                              Private Reflection
+                          </a>
+                      </li>
+                  </ul>
+
+              <a href="http://freemusicarchive.org/music/kevin_macleod/" class="btn btn-block btn-lg btn-inverse">Visit The Site</a>
+            </aside>
+          </article>
+        </section>
+
+
+    <footer>
+      <div class="container">
+
+             <a class="footer-brand pull-right" href="https://www.facebook.com/pages/Theevilbob0-Productions/191671884206274" target="_blank">
+              <img src="assets/evilbob_banner.jpg" alt="The Evil Bob 0" />
+            </a>
+
+
+             <a class="footer-brand pull-right" style="width:66px;" href="http://www.youtube.com/user/TheEvilbob0" target="_blank">
+              <img style="width:66px;height:66px;" src="assets/youtube_square_color.png" alt="youtube link"/>
+            </a>
+
+
+             <a class="footer-brand pull-right" style="width:66px;" href="https://www.facebook.com/pages/Theevilbob0-Productions/191671884206274" target="_blank">
+              
+              <img style="width:66px;height:66px;" src="assets/facebook_square.png" alt="Facebook Link"/>
+              
+            </a>
+
+
+           
+      </div>
+  </div> <!-- cover2 -->
+   </div> <!-- wrap -->      
+    </footer>
+
+    
+    <!-- Load JS here for greater good =============================-->
+    
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/jquery.stacktable.js"></script>
+    <script src="http://vjs.zencdn.net/4.1/video.js"></script>
+    <script src="js/application.js"></script>
+  </body>
+</html>

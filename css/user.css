@@ -1,0 +1,186 @@
+body{
+  background-image: url("../assets/dark_wood.png");
+}
+
+#cover{
+  background-image: url("../assets/mallow_textures/Creepy/barn_wall_texture_bw.jpg");
+  padding-bottom: 40px !important;
+}
+
+#cover2{
+background-image: url("../assets/mooning.png");
+}
+
+.navbar, .navbar-inverse, .navbar-top{
+	background-color:transparent;
+  height: 62px !important;
+  margin-bottom: 50px;
+  background-image: url("../assets/nav-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar-inverse .nav > li > a {
+  font-size: 18px;
+  border-bottom: none !important;
+  border-left: none !important;
+  color: #b7b7b7;
+  padding: 16px 20px 15px;
+  line-height: 25px;
+}
+
+.navbar-inverse .nav > li > a:hover{
+  color: #fff;
+}
+
+.navbar-inverse .nav > li.active > a, .navbar-inverse .nav > li.active > a:hover, .navbar-inverse .nav > li.active > a:focus{
+  color: #fff;
+  font-style: italic;
+  font-size: 20px;
+  background-color: transparent !important;
+}
+
+
+#cover .jumbotron{
+  background-image: url("../assets/new_poster.jpg");
+  background-size: cover;
+  background-position-y: -50px;
+  margin-bottom: 40px;
+}
+
+@font-face {
+    font-family: "Crow";
+    src: url("../fonts/October-Crow.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "cta";
+  src: url("../fonts/Face_Your_Fears.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "lead";
+  src: url("../fonts/Toxia_FRE.ttf") format("truetype");
+}
+
+#cover .jumbotron h1{
+  position: relative;
+  top: -40px;
+  font-family: "Crow";
+  /*background: -webkit-linear-gradient(#000, #FFF);*/
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 1px #E7E7E7, 7px 7px 5px #250A00;
+}
+
+#cover .lead{
+  position: relative;
+  top: -40px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 36px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 1px #fff, 3px 3px 5px #000;
+}
+
+
+#cover .jumbotron p a{
+  font-family: "cta";
+  font-size: 25px;
+  text-indent: 30px;
+}
+
+.myoffset{
+	width: 75%;
+}
+
+.composer-banner {
+ margin-top: 70px;
+  background-color: #2C2C2C;
+  margin-left: 42px;
+  min-height: 306px;
+  padding: 0 30px 30px;
+}
+.composer-banner .footer-title {
+  color: #eee;
+  font-family: 'Metal Mania', cursive;
+  font-size: 28px;
+}
+.composer-banner ul a{
+ color: #BBBBBB;
+ font-family: 'Voltaire', sans-serif;
+}
+.composer-banner a:hover {
+  text-decoration: none;
+
+}
+.composer-banner ul {
+  list-style-type: none;
+  margin: 0 0 26px;
+  padding: 0;
+}
+.composer-banner ul li {
+  border-top: 2px solid #000000;
+  line-height: 19px;
+  padding: 6px 0;
+}
+.composer-banner ul li:first-child {
+  border-top: none;
+  padding-top: 1px;
+}
+
+.page-header h1, h2, h3{
+  font-family: 'Amatic SC', cursive;
+  color: white;
+}
+
+#cover2 .page-header{
+  color:black;
+}
+
+.myh3{
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.myHeader{
+  margin-top: 26px !important;
+  margin-bottom: 10px !important;
+}
+
+.aboutJumbo{
+  background-image: url("../assets/mallow_textures/Grunge/dark_green.jpg");
+  background-size: cover;
+  
+}
+
+.aboutJumbo h1{
+  font-family: "Crow";
+  color: #fff !important;
+}
+
+.aboutJumbo header p{
+  font-family: 'Shadows Into Light Two', cursive;
+  color: #fff;
+}
+
+.aboutContainer p{
+  color: #ccc !important;
+}
+
+.aboutContainer a{
+  color: #8B291E;
+}
+
+p{
+	font-family: 'Voltaire', sans-serif;
+  /*letter-spacing: 1px;*/
+	word-spacing:2px;
+  color: black;
+}
+
+footer{
+  margin-top: 40px;
+}
